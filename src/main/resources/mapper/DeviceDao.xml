@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="IDao.DeviceDao">
+
+    <sql id="devices">
+      device_id,apppath,device_name,platform_name,platform_version,udid,uri,noReset,stopOnRest,unicodeKeyboard
+    </sql>
+
+    <!--根据条件查询设备-->
+    <select id="findAllDevice" resultType="Entity.TDevice">
+        SELECT <include refid="devices"/>
+        FROM df_device
+        WHERE 1=1
+        <if test="tDevice.deviceid!=null">
+            deviceid=#{tDevice.deviceid}
+        </if>
+    </select>
+
+    <!--添加设备-->
+    <insert id="addDevices">
+        INSERT INTO
+        df_device(apppath,device_name,platform_name,platform_version,udid,uri,noReset,stopOnRest,unicodeKeyboard)
+        VALUES
+        (#{tdevice.apppath},#{tdevice.device_name},#{tdevice.platform_name},#{tdevice.platform_version},#{tdevice.udid},#{tdevice.uri},#{tdevice.noReset},#{tdevice.stopOnRest},#{tdevice.unicodeKeyboard})
+    </insert>
+    
+    <delete id="delDevice">
+      DELETE FROM df_device WHERE deviceid=#{did}
+    </delete>
+
+</mapper>
