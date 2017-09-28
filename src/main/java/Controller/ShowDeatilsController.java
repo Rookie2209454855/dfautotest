@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -61,22 +60,6 @@ public class ShowDeatilsController {
     @ResponseBody
     public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file, HttpServletRequest request, HttpServletResponse response)
             throws IOException{
-        try{
-
-            long  startTime=System.currentTimeMillis();
-            System.out.println("fileName："+file.getOriginalFilename());
-            String path="F:\\异常图片\\"+file.getOriginalFilename().split("\\.")[0]+"\\";
-            if(!(new File(path).isDirectory())){
-                new File(path).mkdir();
-            }
-            File newFile=new File(path+new Date().getTime()+file.getOriginalFilename());
-            //通过CommonsMultipartFile的方法直接写文件（注意这个时候）
-            file.transferTo(newFile);
-            long  endTime=System.currentTimeMillis();
-            System.out.println("方法二的运行时间："+String.valueOf(endTime-startTime)+"ms");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
         return excelUploadService.readExcelFile(file);
     }
 

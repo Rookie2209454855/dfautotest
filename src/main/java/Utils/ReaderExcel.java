@@ -1,7 +1,6 @@
 package Utils;
 
 import Entity.Step;
-import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -108,24 +107,17 @@ public class ReaderExcel {
                     Cell cell = row.getCell(c);
                     if (null != cell) {
                         if (c == 0) {
-                            //如果是纯数字,比如你写的是25,cell.getNumericCellValue()获得是25.0,通过截取字符串去掉.0获得25
-                            if(cell.getCellType() == HSSFCell.CELL_TYPE_NUMERIC){
-
-                            }else{
-
-                            }
+                            step.setElement(cell.getStringCellValue());
                         } else if (c == 1) {
-                            if(cell.getCellType() == HSSFCell.CELL_TYPE_NUMERIC){
-
-                            }else{
-
-                            }
+                            step.setType(cell.getStringCellValue());
                         } else if (c == 2){
-                            if(cell.getCellType() == HSSFCell.CELL_TYPE_NUMERIC){
-
-                            }else{
-
-                            }
+                            step.setOtype(cell.getStringCellValue());
+                        } else if (c == 3){
+                            step.setSkeys(cell.getStringCellValue());
+                        } else if (c == 4){
+                            step.setSwap(cell.getStringCellValue());
+                        } else if (c == 5){
+                            step.setText(cell.getStringCellValue());
                         }
                     }
                 }
