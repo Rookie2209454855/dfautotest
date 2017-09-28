@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.tmpl.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap-paginator.js"></script>
 <head>
@@ -17,6 +16,7 @@
                 <button class="btn btn-default" type="button">
                     选择设备
                 </button>
+                <button type="button" class="btn btn-info btn-xs j-import" id="daoru">导入</button>
             </span>
             <select class="form-control" id="devices"></select>
             <span class="input-group-btn">
@@ -27,13 +27,37 @@
         </div>
     </div>
 
-    <%--上传Excel插件--%>
-    <form enctype="multipart/form-data" id="batchUpload"  action="dfzq/upload" method="post" class="form-horizontal">
-        <button class="btn btn-success btn-xs" id="uploadEventBtn" style="height:26px;"  type="button" >选择文件</button>
-        <input type="file" name="file"  style="width:0px;height:0px;" id="uploadEventFile">
-        <input id="uploadEventPath"  disabled="disabled"  type="text" placeholder="请选择excel表" style="border: 1px solid #e6e6e6; height: 26px;width: 200px;" >
-    </form>
-    <button type="button" class="btn btn-success btn-sm"  onclick="userDevice.uploadBtn()" >上传</button>
+    <div class="modal fade" id="Modal-import" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">导入</h4>
+                </div>
+                <div class="modal-body col-xs-12">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="input-file" class="col-sm-2 control-label">案例</label>
+                            <div class="col-sm-10 input-group m-input-group j-input-group" form-prompt="false" form-prompt-text="文件选择错误">
+                                <input type="file" class="form-control" id="input-file" value="" style="display: none" />
+                                <div class="form-control j-file-text m-file-text" style="width: 389px"></div>
+                                <span class="input-group-btn">
+                                        <label for="input-file" class="btn btn-info j-file-click" type="button">选择文件</label>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <a class="col-sm-2 control-label">下载模版</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary j-confirm-btn" id="_agree">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- 模态框（Modal） -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

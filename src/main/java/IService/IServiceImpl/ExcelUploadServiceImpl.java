@@ -1,7 +1,9 @@
 package IService.IServiceImpl;
 
 import Entity.Step;
+import IService.ExcelUploadService;
 import Utils.ReaderExcel;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -9,7 +11,8 @@ import java.util.List;
 /**
  * Created by fengtiepeng on 2017/9/28.
  */
-public class ExcelUploadServiceImpl {
+@Service
+public class ExcelUploadServiceImpl implements ExcelUploadService {
 
     public String readExcelFile(MultipartFile file) {
         String result ="";
