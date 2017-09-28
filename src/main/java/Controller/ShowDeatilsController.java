@@ -36,7 +36,7 @@ public class ShowDeatilsController {
 
 
     /***
-     * 跳转播放视频
+     * 返回全部设备
      * @param model
      * @param id
      * @return
@@ -49,6 +49,12 @@ public class ShowDeatilsController {
         return deviceList;
     }
 
+    /***
+     *添加设备
+     * @param tDevice
+     * @return
+     * @throws UnknownHostException
+     */
     @RequestMapping(value = "/addDevice",method = RequestMethod.GET)
     @ResponseBody
     public Integer addDevice(TDevice tDevice)throws UnknownHostException{
@@ -56,6 +62,14 @@ public class ShowDeatilsController {
     }
 
 
+    /***
+     * 上传excel文档
+     * @param file
+     * @param request
+     * @param response
+     * @return
+     * @throws IOException
+     */
     @RequestMapping(value = "/uploadExcel")
     @ResponseBody
     public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file, HttpServletRequest request, HttpServletResponse response)
