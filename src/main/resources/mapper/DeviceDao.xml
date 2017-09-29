@@ -14,7 +14,7 @@
         FROM df_device
         WHERE 1=1
         <if test="tDevice.deviceid!=null and tDevice.deviceid!=0">
-           and  deviceid=${tDevice.deviceid}
+           and  device_id=${tDevice.deviceid}
         </if>
     </select>
 

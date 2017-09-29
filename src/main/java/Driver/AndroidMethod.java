@@ -2,6 +2,7 @@ package Driver;
 
 import Entity.Pixel;
 import Entity.TDevice;
+import Utils.ErroScreen;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.commons.logging.Log;
@@ -21,6 +22,7 @@ public class AndroidMethod extends init {
     private Log logger = LogFactory.getLog(this.getClass());
     private DesiredCapabilities capabilities;
     private AndroidDriver driver;
+    private ErroScreen erroScree=new ErroScreen();
     /***
      * 安卓初始化
      * @param tDevice
@@ -61,8 +63,9 @@ public class AndroidMethod extends init {
      * 点击方法
      * @param webElement
      */
-    public void click(WebElement webElement){
+    public void click(WebElement webElement)throws IOException{
         webElement.click();
+        erroScree.Screenshot(driver,"点击"+webElement);
     }
 
     /***
@@ -70,15 +73,16 @@ public class AndroidMethod extends init {
      * @param webElement
      * @param keys
      */
-    public void sendKeys(WebElement webElement,String keys){
+    public void sendKeys(WebElement webElement,String keys)throws IOException{
         webElement.sendKeys(keys);
+        erroScree.Screenshot(driver,"输入文本"+webElement);
     }
 
     /***
      * 输入数字/英文
      *@param keys
      */
-    public void sendKeyEvent(String keys){
+    public void sendKeyEvent(String keys)throws IOException{
         int[] keycodes=convertKeyCode(keys);
         for(int key:keycodes){
             try {
@@ -88,13 +92,15 @@ public class AndroidMethod extends init {
             }
             driver.sendKeyEvent(key);
         }
+        erroScree.Screenshot(driver,"输入文本"+keys);
     }
 
     /****
      * 滑动方法
      */
-    public void swap(Pixel pixel) {
+    public void swap(Pixel pixel) throws IOException{
         this.driver.swipe(pixel.getStartX(), pixel.getStartX(), pixel.getEndX(), pixel.getEndY(), pixel.getDuration());
+        erroScree.Screenshot(driver,"滑动操作");
     }
 
     /***
@@ -112,7 +118,7 @@ public class AndroidMethod extends init {
     /***
      * 清空文本
      */
-    public void clearText() {
+    public void clearText()throws IOException {
         this.driver.sendKeyEvent(123);
         for(int i =0;i<30;i++){
             this.driver.sendKeyEvent(22);
@@ -120,6 +126,7 @@ public class AndroidMethod extends init {
         for (int i = 0; i < 30; i++) {
             this.driver.sendKeyEvent(67);
         }
+        erroScree.Screenshot(driver,"滑动操作");
     }
 
     /****

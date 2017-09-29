@@ -3,7 +3,6 @@ package Driver;
 import Entity.Pixel;
 import Entity.Step;
 import Entity.TDevice;
-import Utils.ErroScreen;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebElement;
@@ -17,7 +16,7 @@ import java.util.List;
  */
 public class CreatCase {
     private AndroidMethod androidMethod=new AndroidMethod();
-    private ErroScreen erroScree=new ErroScreen();
+
     private Log logger= LogFactory.getLog(this.getClass());
 
     public void cases(TDevice device, List<Step> steps) throws IOException {
