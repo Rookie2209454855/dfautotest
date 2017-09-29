@@ -46,7 +46,7 @@
                                 </span>
                             </div>
                             <div class="form-group">
-                                <a class="col-sm-2 control-label">下载模版</a>
+                                <a class="col-sm-2 control-label" href="${pageContext.request.contextPath}/template/测试案例模版.xlsx" download="测试案例模版.xlsx">下载模版</a>
                             </div>
                         </div>
                     </div>

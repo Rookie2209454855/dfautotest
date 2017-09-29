@@ -5,7 +5,7 @@
 <mapper namespace="IDao.DeviceDao">
 
     <sql id="devices">
-      device_id,apppath,device_name,platform_name,platform_version,udid,uri,noReset,stopOnRest,unicodeKeyboard
+       device_id as deviceid,apppath,device_name,platform_name,platform_version,udid,uri,noReset,stopOnRest,unicodeKeyboard
     </sql>
 
     <!--根据条件查询设备-->
@@ -13,8 +13,8 @@
         SELECT <include refid="devices"/>
         FROM df_device
         WHERE 1=1
-        <if test="tDevice.deviceid!=null">
-            deviceid=#{tDevice.deviceid}
+        <if test="tDevice.deviceid!=null and tDevice.deviceid!=0">
+           and  deviceid=${tDevice.deviceid}
         </if>
     </select>
 

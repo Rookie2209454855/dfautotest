@@ -15,7 +15,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -65,15 +64,14 @@ public class ShowDeatilsController {
     /***
      * 上传excel文档
      * @param file
-     * @param request
-     * @param response
      * @return
      * @throws IOException
      */
     @RequestMapping(value = "/uploadExcel")
     @ResponseBody
-    public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file, HttpServletRequest request, HttpServletResponse response)
+    public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file,@RequestParam(value="did",required = false)Integer did)
             throws IOException{
+        List<TDevice> tDevice=deviceService.showAllDevice(new TDevice(did));
         return excelUploadService.readExcelFile(file);
     }
 
@@ -94,7 +92,6 @@ public class ShowDeatilsController {
             MultipartHttpServletRequest multiRequest=(MultipartHttpServletRequest)request;
             //获取multiRequest 中所有的文件名
             Iterator iter=multiRequest.getFileNames();
-
             while(iter.hasNext())
             {
                 //一次遍历所有文件
@@ -105,7 +102,6 @@ public class ShowDeatilsController {
                     //上传
                     file.transferTo(new File(path));
                 }
-
             }
 
         }

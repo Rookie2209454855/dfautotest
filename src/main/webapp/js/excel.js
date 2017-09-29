@@ -15,11 +15,24 @@ $(function(){
      * 确认导入
      */
     $("#_agree").click(function () {
+        var did= $("#devices").val();
+        if(did==0){
+            alert("请选择设备!");
+        }else {
+            importExcel(did);
+        }
+    });
+
+    /**
+     * 导入Excel
+     * @param did
+     */
+    function importExcel(did) {
         $("#Modal-import").modal("hide");
         var Id=$("#pcid").val();
         var formData = new FormData();
         formData.append("file", $("#input-file").prop("files")[0]);
-        console.log(formData);
+        formData.append("did", $("#devices").val());
         $.ajax({
             url: "/dfzq/uploadExcel",
             type: "POST",
@@ -40,6 +53,6 @@ $(function(){
                 });
             }
         });
-    });
+    }
 
 })

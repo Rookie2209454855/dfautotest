@@ -127,4 +127,8 @@ public class TDevice implements Serializable {
                 ", unicodeKeyboard=" + unicodeKeyboard +
                 '}';
     }
+
+    public TDevice(Integer deviceid) {
+        this.deviceid = deviceid;
+    }
 }
