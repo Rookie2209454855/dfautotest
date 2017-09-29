@@ -1,5 +1,7 @@
 package Controller;
 
+import Driver.CreatCase;
+import Entity.Step;
 import Entity.TDevice;
 import IService.DeviceService;
 import IService.ExcelUploadService;
@@ -32,6 +34,9 @@ public class ShowDeatilsController {
 
     @Autowired
     private ExcelUploadService excelUploadService;
+
+    private CreatCase creatCase=new CreatCase();
+
 
 
     /***
@@ -72,8 +77,13 @@ public class ShowDeatilsController {
     public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file,@RequestParam(value="did",required = false)Integer did)
             throws IOException{
         List<TDevice> tDevice=deviceService.showAllDevice(new TDevice(did));
-        return excelUploadService.readExcelFile(file);
+        List<Step> steps= excelUploadService.readExcelFile(file);
+        /*选中设备，执行list步骤*/
+        creatCase.cases(tDevice.get(0),steps);
+        return null;
     }
+
+
 
     /*
      *采用spring提供的上传文件的方法

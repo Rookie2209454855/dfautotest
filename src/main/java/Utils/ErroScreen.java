@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * Created by fengtiepeng on 2017/9/18.
  */
-public class erroScreen {
+public class ErroScreen {
 
 
     public  void Screenshot(AndroidDriver driver, String ScreenName)throws IOException {

@@ -16,7 +16,7 @@ import java.net.URL;
 /**
  * Created by fengtiepeng on 2017/9/20.
  */
-public class androidMethod extends init {
+public class AndroidMethod extends init {
 
     private Log logger = LogFactory.getLog(this.getClass());
     private DesiredCapabilities capabilities;
@@ -26,7 +26,7 @@ public class androidMethod extends init {
      * @param tDevice
      * @throws IOException
      */
-    private void initAndroid(TDevice tDevice) throws IOException {
+    public void initAndroid(TDevice tDevice) throws IOException {
         capabilities = new DesiredCapabilities();
         super.init(tDevice,capabilities);
         driver = new AndroidDriver(new URL(tDevice.getUri()), capabilities);

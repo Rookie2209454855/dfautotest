@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class ExcelUploadServiceImpl implements ExcelUploadService {
 
-    public String readExcelFile(MultipartFile file) throws IOException {
+    public List<Step> readExcelFile(MultipartFile file) throws IOException {
         String result ="";
         //创建处理EXCEL的类
         ReaderExcel readExcel=new ReaderExcel();
@@ -42,6 +42,6 @@ public class ExcelUploadServiceImpl implements ExcelUploadService {
         }else{
             result = "上传失败";
         }
-        return result;
+        return stepsist;
     }
 }
