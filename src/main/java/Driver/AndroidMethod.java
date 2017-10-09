@@ -39,24 +39,25 @@ public class AndroidMethod extends init {
      * @return
      */
     public WebElement resultElement(String element,String type){
-        By by=null;
+        WebElement element1=null;
         try{
             if("id".equals(type)||"ID".equals(type)){
-                by=By.id(element);
+                element1=driver.findElement(By.id(element.toString()));
             }else if("xpath".equals(type)||"XPATH".equals(type)){
-                by=By.xpath(element);
+                element1=driver.findElement(By.xpath(element.toString()));
             }else if("txt".equals(type)||"TXT".equals(type)){
-                return driver.findElementByAccessibilityId(element);
+                return driver.findElementByAccessibilityId(element.toString());
             }else if("px".equals(type)||"PX".equals(type)){
                 String[] xys=element.split(",");
                 TouchAction action = new TouchAction(driver);
                 action.tap(Integer.parseInt(xys[0]), Integer.parseInt(xys[0])).perform();
             }
+
         }catch (Exception se){
             se.printStackTrace();
             logger.error("元素筛选失败!");
         }
-        return driver.findElement(by);
+        return element1;
     }
 
     /***
@@ -148,6 +149,14 @@ public class AndroidMethod extends init {
      */
     public String resultText(WebElement element){
         return element.getText();
+    }
+
+    /**
+     * 等待
+     * @param times
+     */
+    public void waitElement(int times)throws Exception{
+        Thread.sleep(times);
     }
 
 

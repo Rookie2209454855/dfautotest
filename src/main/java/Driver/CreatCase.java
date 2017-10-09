@@ -25,6 +25,9 @@ public class CreatCase {
             androidMethod.initAndroid(device);
             if(steps.size()>0){
                 for(Step step:steps){
+                    if(step.getOtype().equals("wait")){
+                        androidMethod.waitElement(Integer.parseInt(step.getSkeys()));
+                    }
                     WebElement webElement=androidMethod.resultElement(step.getElement(),step.getType());
                     if(step.getOtype().toLowerCase().equals("click")){
                         androidMethod.click(webElement);

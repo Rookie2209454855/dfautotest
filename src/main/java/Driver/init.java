@@ -28,9 +28,9 @@ public abstract class init {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,
                 tDevice.getPlatform_version());
         capabilities.setCapability("udid", tDevice.getUdid());
-        capabilities.setCapability("noReset", tDevice.isNoReset());
-        capabilities.setCapability("stopOnRest", tDevice.isStopOnRest());
-        capabilities.setCapability("unicodeKeyboard", tDevice.isUnicodeKeyboard());
+        capabilities.setCapability("noReset", true);
+        capabilities.setCapability("stopOnRest", true);
+        capabilities.setCapability("unicodeKeyboard", true);
 
     }
 
