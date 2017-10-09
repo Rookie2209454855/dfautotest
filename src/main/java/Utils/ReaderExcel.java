@@ -113,6 +113,7 @@ public class ReaderExcel {
                         } else if (c == 2){
                             step.setOtype(cell.getStringCellValue());
                         } else if (c == 3){
+                            cell.setCellType(Cell.CELL_TYPE_STRING);
                             step.setSkeys(cell.getStringCellValue());
                         } else if (c == 4){
                             step.setSwap(cell.getStringCellValue());

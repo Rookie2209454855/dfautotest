@@ -64,9 +64,9 @@ public class AndroidMethod extends init {
      * 点击方法
      * @param webElement
      */
-    public void click(WebElement webElement)throws IOException{
+    public void click(WebElement webElement,String path)throws IOException{
         webElement.click();
-        erroScree.Screenshot(driver,"点击"+webElement);
+        erroScree.Screenshot(driver,path);
     }
 
     /***
@@ -74,16 +74,16 @@ public class AndroidMethod extends init {
      * @param webElement
      * @param keys
      */
-    public void sendKeys(WebElement webElement,String keys)throws IOException{
+    public void sendKeys(WebElement webElement,String keys,String path)throws IOException{
         webElement.sendKeys(keys);
-        erroScree.Screenshot(driver,"输入文本"+webElement);
+        erroScree.Screenshot(driver,path);
     }
 
     /***
      * 输入数字/英文
      *@param keys
      */
-    public void sendKeyEvent(String keys)throws IOException{
+    public void sendKeyEvent(String keys,String path)throws IOException{
         int[] keycodes=convertKeyCode(keys);
         for(int key:keycodes){
             try {
@@ -93,15 +93,15 @@ public class AndroidMethod extends init {
             }
             driver.sendKeyEvent(key);
         }
-        erroScree.Screenshot(driver,"输入文本"+keys);
+        erroScree.Screenshot(driver,path);
     }
 
     /****
      * 滑动方法
      */
-    public void swap(Pixel pixel) throws IOException{
+    public void swap(Pixel pixel,String path) throws IOException{
         this.driver.swipe(pixel.getStartX(), pixel.getStartX(), pixel.getEndX(), pixel.getEndY(), pixel.getDuration());
-        erroScree.Screenshot(driver,"滑动操作");
+        erroScree.Screenshot(driver,path);
     }
 
     /***
@@ -119,7 +119,7 @@ public class AndroidMethod extends init {
     /***
      * 清空文本
      */
-    public void clearText()throws IOException {
+    public void clearText(String path)throws IOException {
         this.driver.sendKeyEvent(123);
         for(int i =0;i<30;i++){
             this.driver.sendKeyEvent(22);
@@ -127,7 +127,7 @@ public class AndroidMethod extends init {
         for (int i = 0; i < 30; i++) {
             this.driver.sendKeyEvent(67);
         }
-        erroScree.Screenshot(driver,"滑动操作");
+        erroScree.Screenshot(driver,path);
     }
 
     /****

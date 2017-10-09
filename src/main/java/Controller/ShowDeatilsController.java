@@ -76,10 +76,11 @@ public class ShowDeatilsController {
     @ResponseBody
     public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file,@RequestParam(value="did",required = false)Integer did)
             throws IOException{
+        String path="F:\\异常图片\\"+file.getOriginalFilename().split("\\.")[0]+"\\";
         List<TDevice> tDevice=deviceService.showAllDevice(new TDevice(did));
         List<Step> steps= excelUploadService.readExcelFile(file);
         /*选中设备，执行list步骤*/
-        creatCase.cases(tDevice.get(0),steps);
+        creatCase.cases(tDevice.get(0),steps,path);
         return null;
     }
 

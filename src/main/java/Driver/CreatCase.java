@@ -19,7 +19,7 @@ public class CreatCase {
 
     private Log logger= LogFactory.getLog(this.getClass());
 
-    public void cases(TDevice device, List<Step> steps) throws IOException {
+    public void cases(TDevice device, List<Step> steps,String path) throws IOException {
         /**初始化设备*/
         try{
             androidMethod.initAndroid(device);
@@ -27,15 +27,16 @@ public class CreatCase {
                 for(Step step:steps){
                     if(step.getOtype().equals("wait")){
                         androidMethod.waitElement(Integer.parseInt(step.getSkeys()));
-                    }
-                    WebElement webElement=androidMethod.resultElement(step.getElement(),step.getType());
-                    if(step.getOtype().toLowerCase().equals("click")){
-                        androidMethod.click(webElement);
-                    }else if(step.getOtype().toLowerCase().equals("send")){
-                        androidMethod.sendKeys(webElement,step.getSkeys());
-                    }else if(step.getOtype().toLowerCase().equals("swap")){
-                        Pixel pixel=this.jxSwapPx(step.getSwap());
-                        androidMethod.swap(pixel);
+                    }else {
+                        WebElement webElement=androidMethod.resultElement(step.getElement(),step.getType());
+                        if(step.getOtype().toLowerCase().equals("click")){
+                            androidMethod.click(webElement,path);
+                        }else if(step.getOtype().toLowerCase().equals("send")){
+                            androidMethod.sendKeys(webElement,step.getSkeys(),path);
+                        }else if(step.getOtype().toLowerCase().equals("swap")){
+                            Pixel pixel=this.jxSwapPx(step.getSwap());
+                            androidMethod.swap(pixel,path);
+                        }
                     }
                 }
             }
