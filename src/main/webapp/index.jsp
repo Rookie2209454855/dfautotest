@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/jquery.tmpl.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/bootstrap-paginator.js"></script>
 <head>
@@ -16,7 +16,6 @@
                 <button class="btn btn-default" type="button">
                     选择设备
                 </button>
-                <button type="button" class="btn btn-info btn-xs j-import" id="daoru">导入</button>
             </span>
             <select class="form-control" id="devices"></select>
             <span class="input-group-btn">
@@ -25,6 +24,7 @@
                 </button>
             </span>
         </div>
+        <%--<button type="button" class="btn btn-info btn-xs j-import" id="daoru">导入案例</button>--%>
     </div>
 
     <div class="modal fade" id="Modal-import" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -32,7 +32,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">导入</h4>
+                    <h4 class="modal-title">导入需执行的案例</h4>
                 </div>
                 <div class="modal-body col-xs-12">
                     <div class="form-horizontal">
@@ -42,11 +42,11 @@
                                 <input type="file" class="form-control" id="input-file" value="" style="display: none" />
                                 <div class="form-control j-file-text m-file-text" style="width: 389px"></div>
                                 <span class="input-group-btn">
-                                        <label for="input-file" class="btn btn-info j-file-click" type="button">选择文件</label>
+                                    <label for="input-file" class="btn btn-info j-file-click" type="button">选择执行案例</label>
                                 </span>
                             </div>
                             <div class="form-group">
-                                <a class="col-sm-2 control-label" href="${pageContext.request.contextPath}/template/测试案例模版.xlsx" download="测试案例模版.xlsx">下载模版</a>
+                                <a class="col-sm-3 control-label" href="${pageContext.request.contextPath}/template/测试案例模版.xlsx" download="测试案例模版.xlsx">下载案例模版</a>
                             </div>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
                     <button type="button" class="btn btn-primary" id="addDevice">
-                        提交更改
+                        提交设备
                     </button>
                 </div>
             </div><!-- /.modal-content -->

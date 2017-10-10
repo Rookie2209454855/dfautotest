@@ -7,7 +7,7 @@ $(function(){
 
 
 
-    $("#daoru").click(function () {
+    $("#devices").change(function () {
         $("#Modal-import").modal('show');
     })
 
