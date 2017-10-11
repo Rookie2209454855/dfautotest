@@ -28,7 +28,7 @@ $(function(){
      * @param did
      */
     function importExcel(did) {
-        $("#Modal-import").modal("hide");
+        /*$("#Modal-import").modal("hide");*/
         var Id=$("#pcid").val();
         var formData = new FormData();
         formData.append("file", $("#input-file").prop("files")[0]);
@@ -40,17 +40,15 @@ $(function(){
             processData: false,
             contentType: false,
             success: function(data){
-                var content;
-                if(data == "success"){
-                    content = "导入成功";
-                }else if(data == "error"){
-                    content = "导入失败";
-                }
-                layer.confirm(content,function(){
-                    $("#Modal-qualified-set").modal("hide");
-                    layer.closeAll('dialog');
-                    location.reload();
-                });
+                var content=data;
+                console.log(content);
+                var progress="<div class='progress'>"+
+                    "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 50%;'>"
+                    +"<span class='sr-only'>50% 执行中（成功）</span>"
+                    +"</div>"
+                    +"</div>";
+               /* $("#head").empty().append("执行中...");
+                $("#smessage").empty().append(progress);*/
             }
         });
     }

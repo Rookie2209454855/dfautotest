@@ -7,7 +7,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebElement;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -19,7 +18,7 @@ public class CreatCase {
 
     private Log logger= LogFactory.getLog(this.getClass());
 
-    public void cases(TDevice device, List<Step> steps,String path) throws IOException {
+    public void cases(TDevice device, List<Step> steps,String path) throws Exception {
         /**初始化设备*/
         try{
             androidMethod.initAndroid(device);

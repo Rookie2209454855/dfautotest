@@ -75,13 +75,18 @@ public class ShowDeatilsController {
     @RequestMapping(value = "/uploadExcel")
     @ResponseBody
     public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file,@RequestParam(value="did",required = false)Integer did)
-            throws IOException{
+            {
+        String messgae="执行中";
         String path="F:\\异常图片\\"+file.getOriginalFilename().split("\\.")[0]+"\\";
-        List<TDevice> tDevice=deviceService.showAllDevice(new TDevice(did));
-        List<Step> steps= excelUploadService.readExcelFile(file);
-        /*选中设备，执行list步骤*/
-        creatCase.cases(tDevice.get(0),steps,path);
-        return null;
+        try{
+            List<TDevice> tDevice=deviceService.showAllDevice(new TDevice(did));
+            List<Step> steps= excelUploadService.readExcelFile(file);
+            /*选中设备，执行list步骤*/
+            creatCase.cases(tDevice.get(0),steps,path);
+        }catch (Exception e){
+            messgae=e.getMessage();
+        }
+        return messgae;
     }
 
 

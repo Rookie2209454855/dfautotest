@@ -30,13 +30,13 @@
     <div class="modal fade" id="Modal-import" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" id="head">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title">导入需执行的案例</h4>
                 </div>
                 <div class="modal-body col-xs-12">
                     <div class="form-horizontal">
-                        <div class="form-group">
+                        <div class="form-group" id="smessage">
                             <label for="input-file" class="col-sm-2 control-label">案例</label>
                             <div class="col-sm-10 input-group m-input-group j-input-group" form-prompt="false" form-prompt-text="文件选择错误">
                                 <input type="file" class="form-control" id="input-file" value="" style="display: none" />
