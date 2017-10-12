@@ -20,7 +20,7 @@ public class ErroScreen {
         SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd-mm-ss");
         //生成时间戳
         String dateString =formatter.format(new Date());
-        String dir_name="F:\\异常图片";
+        String dir_name=CreateFileList.resultFileList();
         System.out.println("异常图片目录"+dir_name);
         //由于可能存在异常图片的且当被删除的可能，所以这边先判断目录是否存在
         if(!(new File(dir_name+"\\"+ScreenName+"\\").isDirectory()));

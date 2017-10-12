@@ -5,6 +5,7 @@ import Entity.Step;
 import Entity.TDevice;
 import IService.DeviceService;
 import IService.ExcelUploadService;
+import Utils.CreateFileList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -74,10 +75,9 @@ public class ShowDeatilsController {
      */
     @RequestMapping(value = "/uploadExcel")
     @ResponseBody
-    public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file,@RequestParam(value="did",required = false)Integer did)
-            {
+    public String uploadExcel(@RequestParam(value="file",required = false)MultipartFile file,@RequestParam(value="did",required = false)Integer did) throws IOException {
         String messgae="执行中";
-        String path="F:\\异常图片\\"+file.getOriginalFilename().split("\\.")[0]+"\\";
+        String path= CreateFileList.resultFileList()+file.getOriginalFilename().split("\\.")[0]+"\\";
         try{
             List<TDevice> tDevice=deviceService.showAllDevice(new TDevice(did));
             List<Step> steps= excelUploadService.readExcelFile(file);
