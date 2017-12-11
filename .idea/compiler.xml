@@ -22,13 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="auto.test" />
-        <module name="dfzqautotest" />
+        <module name="dfautotest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="auto.test" target="1.5" />
-      <module name="dfzqautotest" target="1.8" />
+      <module name="dfautotest" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

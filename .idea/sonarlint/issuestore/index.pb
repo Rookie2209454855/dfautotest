@@ -1,7 +1,7 @@
 
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-@
-dfzqautotest.iml,5\0\5059f2c5b92c5ea2b2b089b49ee25a7063b32e04
+W
+'src\main\java\Driver\AndroidMethod.java,8\0\80ee496be39c2717cfc50454067150e01a72437d
+c
+3src\main\java\Controller\ShowDeatilsController.java,9\2\922ae47104cbb599fb19dc51ce92076e326f6f45
+S
+#src\main\java\Driver\WebMethod.java,d\b\db10a3713a34aee96e6f22ffff280eb1c47beea2

@@ -1,9 +1,14 @@
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * 配置spring和junit整合，junit启动时加载springIOC容器 spring-test,junit

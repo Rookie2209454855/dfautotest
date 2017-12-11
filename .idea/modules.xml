@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dfzqautotest.iml" filepath="$PROJECT_DIR$/dfzqautotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dfautotest.iml" filepath="$PROJECT_DIR$/.idea/dfautotest.iml" />
     </modules>
   </component>
 </project>

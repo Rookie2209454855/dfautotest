@@ -91,7 +91,7 @@ public class AndroidMethod extends init {
             } catch (InterruptedException e1) {
                 logger.error(e1.getMessage(), e1);
             }
-            driver.sendKeyEvent(key);
+            driver.pressKeyCode(key);
         }
         erroScree.Screenshot(driver,path);
     }
@@ -120,12 +120,12 @@ public class AndroidMethod extends init {
      * 清空文本
      */
     public void clearText(String path)throws IOException {
-        this.driver.sendKeyEvent(123);
+        this.driver.pressKeyCode(123);
         for(int i =0;i<30;i++){
-            this.driver.sendKeyEvent(22);
+            this.driver.pressKeyCode(22);
         }
         for (int i = 0; i < 30; i++) {
-            this.driver.sendKeyEvent(67);
+            this.driver.pressKeyCode(67);
         }
         erroScree.Screenshot(driver,path);
     }
