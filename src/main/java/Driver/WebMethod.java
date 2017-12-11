@@ -23,7 +23,7 @@ public class WebMethod {
      * @return
      * @throws MalformedURLException
      */
-    public WebDriver initDriver(String uri,Integer type)throws MalformedURLException {
+    public void initDriver(String uri,Integer type)throws MalformedURLException {
         DesiredCapabilities capability;
         switch (type){
             case 1:
@@ -44,9 +44,12 @@ public class WebMethod {
          */
         URL url=new URL(uri);
         driver= new RemoteWebDriver(url,capability);
-        return driver;
+        //return driver;
     }
 
+    public void openUrl(String url){
+        driver.get(url);
+    }
 
     /***
      *返回元素By Type
@@ -110,7 +113,7 @@ public class WebMethod {
     /***
      * 返回选中文本
      */
-    public String resultTxt(String element,Integer type,String txtValue){
+    public String resultTxt(String element,Integer type){
         String txt=null;
         try {
             WebElement webElement=this.resultElement(element,type);
