@@ -69,6 +69,9 @@ public class WebMethod {
            case 2:
                element1=driver.findElement(By.name(element));
                break;
+           case 3:
+               element1=driver.findElement(By.cssSelector(element));
+               break;
        }
        return element1;
    }

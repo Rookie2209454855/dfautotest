@@ -1,16 +1,27 @@
 package Entity;
 
+import java.io.Serializable;
+
 /***
  * web驱动属性
  */
-public class WebDevice {
+public class WebDevice implements Serializable {
 
-    private String driverUrl;
+    private String driverUrl;//连接地址
 
     private Integer driverType;//0=chrome;1=firefox,2=edge;
 
-    private String driverName;
+    private String driverName;//驱动名称
 
+    private String context;//备注
+
+    public String getContext() {
+        return context;
+    }
+
+    public void setContext(String context) {
+        this.context = context;
+    }
 
     public String getDriverUrl() {
         return driverUrl;
