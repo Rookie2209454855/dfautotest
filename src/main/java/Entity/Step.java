@@ -7,12 +7,22 @@ import java.io.Serializable;
  */
 public class Step implements Serializable {
 
+    private Integer id;
     private String element;//元素
-    private String type;//元素类型
+    private String etype;//元素类型
     private String otype;//操作类型
     private String skeys;//输入值
     private String swap;//滑动类型
     private String text;//获取txt值
+    private Integer cId;//案例ID
+
+    public Integer getcId() {
+        return cId;
+    }
+
+    public void setcId(Integer cId) {
+        this.cId = cId;
+    }
 
     public String getElement() {
         return element;
@@ -20,14 +30,6 @@ public class Step implements Serializable {
 
     public void setElement(String element) {
         this.element = element;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getOtype() {
@@ -62,6 +64,22 @@ public class Step implements Serializable {
         this.text = text;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getEtype() {
+        return etype;
+    }
+
+    public void setEtype(String etype) {
+        this.etype = etype;
+    }
+
     public Step() {
         super();
     }
@@ -70,7 +88,7 @@ public class Step implements Serializable {
     public String toString() {
         return "Step{" +
                 "element='" + element + '\'' +
-                ", type='" + type + '\'' +
+                ", type='" + etype + '\'' +
                 ", otype='" + otype + '\'' +
                 ", skeys='" + skeys + '\'' +
                 ", swap='" + swap + '\'' +

@@ -91,7 +91,7 @@
                     </div>
                     <br>
                     <div class="input-group">
-                            <span class="input-group-btn">
+                            <span class="input-group-btn">00
                                 <button class="btn btn-default" type="button">
                                     设备系统:
                                 </button>

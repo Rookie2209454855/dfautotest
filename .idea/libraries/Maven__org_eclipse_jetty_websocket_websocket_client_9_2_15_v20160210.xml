@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.eclipse.jetty.websocket:websocket-client:9.2.15.v20160210">
     <CLASSES>
-      <root url="jar://D:/软件开发工具/repository/org/eclipse/jetty/websocket/websocket-client/9.2.15.v20160210/websocket-client-9.2.15.v20160210.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.2.15.v20160210/websocket-client-9.2.15.v20160210.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://D:/软件开发工具/repository/org/eclipse/jetty/websocket/websocket-client/9.2.15.v20160210/websocket-client-9.2.15.v20160210-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.2.15.v20160210/websocket-client-9.2.15.v20160210-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://D:/软件开发工具/repository/org/eclipse/jetty/websocket/websocket-client/9.2.15.v20160210/websocket-client-9.2.15.v20160210-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.m2/repository/org/eclipse/jetty/websocket/websocket-client/9.2.15.v20160210/websocket-client-9.2.15.v20160210-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

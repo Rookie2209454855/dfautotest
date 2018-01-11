@@ -27,7 +27,7 @@ public class CreatCase {
                     if(step.getOtype().equals("wait")){
                         androidMethod.waitElement(Integer.parseInt(step.getSkeys()));
                     }else {
-                        WebElement webElement=androidMethod.resultElement(step.getElement(),step.getType());
+                        WebElement webElement=androidMethod.resultElement(step.getElement(),step.getEtype());
                         if(step.getOtype().toLowerCase().equals("click")){
                             androidMethod.click(webElement,path);
                         }else if(step.getOtype().toLowerCase().equals("send")){
