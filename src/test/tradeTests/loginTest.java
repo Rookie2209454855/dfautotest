@@ -31,7 +31,7 @@ public class loginTest {
         tDevice.setDevice_name("zuk");
         tDevice.setPlatform_name("Android");
         tDevice.setPlatform_version("7.0");
-        tDevice.setUri("http://127.0.0.1:4725/wd/hub");
+        tDevice.setUri("http://192.168.137.1:4725/wd/hub");
         DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.APPIUM);
         driver=linit.init(tDevice,desiredCapabilities);

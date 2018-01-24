@@ -27,6 +27,9 @@ public class goldenTest {
      */
     @Test
     public void manage()throws Exception{
+        MobileElement e0 = (MobileElement) driver.findElementById("com.dfzq.winner:id/item_bottom_mine");
+        e0.click();
+        Thread.sleep(2000);
         //点击理财
         MobileElement el1 = (MobileElement) driver.findElementById("com.dfzq.winner:id/item_bottom_finance");
         el1.click();
@@ -38,7 +41,7 @@ public class goldenTest {
         //点击充值
         MobileElement el3 = (MobileElement) driver.findElementByXPath("(//android.widget.Button[@content-desc=\"充值\"])[1]");
         el3.click();
-        Thread.sleep(5000);
+  /*      Thread.sleep(5000);
         MobileElement el5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.support.v7.app.ActionBar.b[2]");
         el5.click();
         Thread.sleep(5000);
@@ -54,7 +57,7 @@ public class goldenTest {
         MobileElement el9 = (MobileElement) driver.findElementById("com.dfzq.winner:id/btn_dialog_confirm");
         el9.click();
         Thread.sleep(5000);
-        el3.click();
+        el3.click();*/
         Thread.sleep(5000);
         MobileElement el10 = (MobileElement) driver.findElementByXPath("//android.view.View[@content-desc=\"充值\"]/android.view.View[4]/android.widget.EditText");
         el10.click();
@@ -96,17 +99,17 @@ public class goldenTest {
    public void execbuyTest()throws Exception{
        driver=_loginTest.init(driver);
        Thread.sleep(10000);
-       try{
            for(int i=0;i<=10;i++){
-               this.manage();
-               driver.findElement(By.id("com.dfzq.winner:id/btn_back")).click();
+               try{
+                   this.manage();
+                   driver.findElement(By.id("com.dfzq.winner:id/btn_back")).click();
+               }catch (Exception e){
+                   sc.Screenshot(driver,"买入erro");
+                   e.printStackTrace();
+                   driver.closeApp();
+                   driver=_loginTest.init(driver);
+               }
            }
-       }catch (Exception e){
-           e.printStackTrace();
-           driver.closeApp();
-           execbuyTest();
-       }
-
    }
 
 
