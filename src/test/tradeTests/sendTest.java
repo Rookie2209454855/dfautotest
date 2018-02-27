@@ -7,7 +7,7 @@ import testScript.ScreenHot;
 import testScript.loadInit;
 
 /***
- * 买入
+ * 卖出
  */
 public class sendTest {
 
@@ -21,11 +21,10 @@ public class sendTest {
 
     /**
      * 执行 buy manage
-     * 买入数量 为1000股
+     * 卖出数量 为1000股
      */
     @Test
     public void manage()throws Exception{
-
         //click buy
         driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.GridView/android.widget.LinearLayout[2]")).click();
 
@@ -79,13 +78,13 @@ public class sendTest {
 
         }else {
             //确认
-            driver.findElement(By.id("android:id/button1")).click();
+            driver.findElement(By.id("android:id/button2")).click();
         }
    }
 
 
     /***
-     * 买入案例
+     * 卖出案例
      * @throws Exception
      */
    @Test

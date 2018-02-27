@@ -43,17 +43,18 @@ public class searchTest {
 
             driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.TextView[8]")).click();
 
-            driver.findElement(By.id("com.dfzq.winner:id/begin_date_textview")).click();
-            driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[2]/android.widget.Button[1]")).click();
+            //driver.findElement(By.id("com.dfzq.winner:id/begin_date_textview")).click();
+            //driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.DatePicker/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.NumberPicker[2]/android.widget.Button[1]")).click();
             driver.findElement(By.id("android:id/button1")).click();
+            driver.findElement(By.id("com.dfzq.winner:id/left_back_button")).click();
 
-            Thread.sleep(2000);
+           /* Thread.sleep(2000);
             driver.findElement(By.xpath("hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.LinearLayout")).click();
             (new TouchAction(driver)).tap(366, 929).perform();
-            driver.findElement(By.id("com.dfzq.winner:id/left_back_button")).click();
+            driver.findElement(By.id("com.dfzq.winner:id/left_back_button")).click();*/
         }catch (Exception e){
             e.printStackTrace();
-            sc.Screenshot(driver,"价格联动erro");
+            sc.Screenshot(driver,"资金查询");
         }
 
 
