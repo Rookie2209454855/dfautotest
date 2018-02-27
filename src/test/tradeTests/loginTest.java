@@ -26,8 +26,8 @@ public class loginTest {
         linit=new loadInit();
         /*加在配置*/
         TDevice tDevice=new TDevice();
-        tDevice.setUdid("127.0.0.1:62001");
-        tDevice.setApppath("D:\\main-sit-release.apk");
+        tDevice.setUdid("127.0.0.1:21503");
+        tDevice.setApppath("D:\\DFYJ_SIT.apk");
         tDevice.setDevice_name("zuk");
         tDevice.setPlatform_name("Android");
         tDevice.setPlatform_version("7.0");
@@ -44,14 +44,40 @@ public class loginTest {
         WebElement cahxun=driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.GridView/android.widget.LinearLayout[4]"));
         cahxun.click();
         Thread.sleep(1000);
+
+       /* *//**输入登陆账号**//*
+        MobileElement el4 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.EditText");
+        el4.sendKeys("00119443");
+        WebElement epwd=driver.findElement(By.id(" com.dfzq.winner:id/secret_edit_text"));
+        epwd.sendKeys("123321");
+        Thread.sleep(1000);
+        String code=driver.findElement(By.id("c
+        om.dfzq.winner:id/get_verify_code")).getText();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.EditText")).sendKeys(code);
+        Thread.sleep(1000);
+        driver.findElement(By.id("com.dfzq.winner:id/login_button")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.id("com.dfzq.winner:id/btn_dialog_confirm")).click();*/
+
+
+
+
+
+
+
+
         /***密码*/
         WebElement epwd=driver.findElement(By.id("com.dfzq.winner:id/secret_edit_text"));
         epwd.sendKeys("123321");
         Thread.sleep(1000);
+
+
         /**确定*/
         WebElement confirm=driver.findElement(By.id("com.dfzq.winner:id/confirm_btn"));
         confirm.click();
         Thread.sleep(1000);
+        driver.findElement(By.id("com.dfzq.winner:id/left_back_button")).click();
         return  driver;
     }
 

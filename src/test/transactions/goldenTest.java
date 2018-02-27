@@ -99,7 +99,7 @@ public class goldenTest {
    public void execbuyTest()throws Exception{
        driver=_loginTest.init(driver);
        Thread.sleep(10000);
-           for(int i=0;i<=10;i++){
+           for(int i=0;i<=1000;i++){
                try{
                    this.manage();
                    driver.findElement(By.id("com.dfzq.winner:id/btn_back")).click();
@@ -107,6 +107,7 @@ public class goldenTest {
                    sc.Screenshot(driver,"买入erro");
                    e.printStackTrace();
                    driver.closeApp();
+                   driver.quit();
                    driver=_loginTest.init(driver);
                }
            }
