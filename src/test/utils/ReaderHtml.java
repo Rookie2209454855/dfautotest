@@ -17,11 +17,11 @@ public class ReaderHtml {
     @Test
     public void reader() {
         try {
-            //String exceptionShow="http://www.biquge.com.tw/4_4029/9005830.html";
+            //String exceptionShow="http://www.biquge.com.tw/4_4029/9016696.html";
             //String xiuzhen="https://www.xs.la/36_36007/2683541.html";
             //Document document = Jsoup.connect("https://www.xxbiquge.com/2_2368/" + "4165401.html").get();
             //System.out.println(document.location());
-            String kingPeople="http://www.biqukan.com/17_17939/6673639.html";
+            String kingPeople="http://www.biqukan.com/17_17939/15447745.html";
             Document document = Jsoup.connect(kingPeople).get();
 
             System.out.print(document.title());
@@ -67,6 +67,7 @@ public class ReaderHtml {
             System.out.println(ioException.getMessage());
 
         }
+
     }
 
 
