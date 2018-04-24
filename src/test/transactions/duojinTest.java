@@ -27,15 +27,18 @@ public class duojinTest {
      */
     @Test
     public void manage()throws Exception{
+
         MobileElement el1 = (MobileElement) driver.findElementById("com.dfzq.winner:id/item_bottom_finance");
         el1.click();
 
         MobileElement el2 = (MobileElement) driver.findElementByAccessibilityId("定期");
-        el2.click();
+        el2
+                .click();
         Thread.sleep(5000);
         MobileElement el3 = (MobileElement) driver.findElementByAccessibilityId("招商招利001693 Heading");
         el3.click();
         Thread.sleep(5000);
+
         MobileElement el4 = (MobileElement) driver.findElementByAccessibilityId("立即买入");
         el4.click();
         MobileElement el5 = (MobileElement) driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.support.v4.view.ViewPager/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.support.v7.app.ActionBar.b[2]");
@@ -77,15 +80,19 @@ public class duojinTest {
    public void execbuyTest()throws Exception{
        driver=_loginTest.init(driver);
        Thread.sleep(10000);
-       try{
-           for(int i=0;i<=10;i++){
-               this.manage();
+       for(int i=0;i<=1000;i++){
+           try{
+
+                   this.manage();
+
+           }catch (Exception e){
+               e.printStackTrace();
+               driver.closeApp();
+               driver.quit();
+               driver=_loginTest.init(driver);
+               sc.Screenshot(driver,"多金Erro");
            }
-       }catch (Exception e){
-           e.printStackTrace();
-           driver.closeApp();
-           execbuyTest();
-       }
+        }
    }
 
 

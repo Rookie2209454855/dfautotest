@@ -45,9 +45,6 @@ public class buyAndCorderTest {
         Thread.sleep(1000);
         //查看价格联动
         String price=driver.findElement(By.id("com.dfzq.winner:id/price_et")).getText();
-        if(price.equals("")){
-            sc.Screenshot(driver,"价格联动erro");
-        }
         System.out.println(price);
 
         //price +
@@ -75,7 +72,7 @@ public class buyAndCorderTest {
         //购买u成功提示
         String message=driver.findElement(By.id("android:id/message")).getText();
         System.out.println(message);
-
+        sc.Screenshot(driver,"撤单Erro");
         //确认
         driver.findElement(By.id("android:id/button1")).click();
 
@@ -89,11 +86,11 @@ public class buyAndCorderTest {
         driver.findElement(By.id("android:id/button1")).click();
         String confirmMes=driver.findElement(By.id("android:id/message")).getText();
         System.out.println(confirmMes);
-        driver.findElement(By.id("android:id/button1")).click();
+        /*driver.findElement(By.id("android:id/button1")).click();
         Thread.sleep(2000);
         if(flagcode.equals(element.getText())){
             sc.Screenshot(driver,"价格联动erro");
-        }
+        }*/
 
     }
 
@@ -112,6 +109,7 @@ public class buyAndCorderTest {
            }
        }catch (Exception e){
            e.printStackTrace();
+           sc.Screenshot(driver,"撤单Erro");
            execbuyTest();
        }
 

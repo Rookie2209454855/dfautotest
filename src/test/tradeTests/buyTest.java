@@ -26,6 +26,7 @@ public class buyTest {
     @Test
     public void manage()throws Exception{
 
+
         //click buy
         driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.support.v4.view.ViewPager/android.widget.RelativeLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.GridView/android.widget.LinearLayout[1]")).click();
 
@@ -87,14 +88,16 @@ public class buyTest {
    @Test
    public void execbuyTest()throws Exception{
        driver=_loginTest.init(driver);
-       try{
-           for(int i=0;i<=10;i++){
-               this.manage();
-               driver.findElement(By.id("com.dfzq.winner:id/left_back_button")).click();
+       for(int i=0;i<=10;i++){
+           try{
+
+                   this.manage();
+                   driver.findElement(By.id("com.dfzq.winner:id/left_back_button")).click();
+           }catch (Exception e){
+               e.printStackTrace();
+               sc.Screenshot(driver,"交易-买入Erro");
+               driver=_loginTest.init(driver);
            }
-       }catch (Exception e){
-           e.printStackTrace();
-           execbuyTest();
        }
 
    }

@@ -31,7 +31,8 @@ public class loginTest {
         /*加在配置*/
         TDevice tDevice=new TDevice();
         tDevice.setUdid("127.0.0.1:21503");
-        tDevice.setApppath("D:\\DFYJ_SIT_NEW.apk");
+        //tDevice.setUdid("d6e84556");
+        tDevice.setApppath("D:\\DFYJ_SIT.apk");
         tDevice.setDevice_name("zuk");
         tDevice.setPlatform_name("Android");
         tDevice.setPlatform_version("7.0");

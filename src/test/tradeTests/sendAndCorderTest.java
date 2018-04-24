@@ -80,7 +80,7 @@ public class sendAndCorderTest {
 
         }else {
             //确认
-            driver.findElement(By.id("android:id/button1")).click();
+            driver.findElement(By.id("android:id/button2")).click();
         }
 
         //撤单
@@ -116,6 +116,7 @@ public class sendAndCorderTest {
            }
        }catch (Exception e){
            e.printStackTrace();
+           sc.Screenshot(driver,"卖出撤单Erro");
            execSendTest();
        }
 
